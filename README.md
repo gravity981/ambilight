@@ -36,12 +36,16 @@ network={
 * ``cd rpi_ws281x``
 * ``scons`` to build library
 * make sure LEDs are connected correctly (default DIN is GPIO 18)
-* ``sudo ./test`` to check if LEDs work
+* ``sudo ./test -c`` to check if LEDs work
 * now build python wrapper
   * ``sudo apt-get install python-dev swig``
   * ``cd ~/rpi_ws281x/python/``
   * ``python ./setup.py build``
-* TBD add neopixel.py to PYTHONPATH permanent
+* ``nano ~/.bashrc`` in pi home directory
+* add ``export PYTHONPATH="${PYTHONPATH}:/home/pi/rpi_ws281x/python/build/lib.linux-armv7l-2.7"`` at the end
+* ``source ~/.bashrc``
+* now ``import neopixel`` within python scripts work
+
 
 ## Install Flask
 * TBD install Flask
