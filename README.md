@@ -1,4 +1,4 @@
-# Ambilight Setup on Raspberry Pi 3
+# Ambilight Server on Raspberry Pi 3
 ## Basic Setup
 * flash [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) to Raspberry Pi's SD card, on windows use [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/)
   * used version: 2017-09-07-raspbian-stretch-lite
@@ -44,16 +44,51 @@ network={
 * ``nano ~/.bashrc`` in pi home directory
 * add ``export PYTHONPATH="${PYTHONPATH}:/home/pi/rpi_ws281x/python/build/lib.linux-armv7l-2.7"`` at the end
 * ``source ~/.bashrc``
-* now ``import neopixel`` within python scripts work
+* driver needs access to /dev/mem, thats why scripts with LEDs must called with sudo
+  * ``sudo nano /etc/sudoers``
+  * add ``Defaults env_keep += "PYTHONPATH"`` in the end
+* now ``import neopixel`` within python scripts should work
 
 
-## Install Flask
-* TBD install Flask
+## Install Flask Python Web Framework
+* ``sudo apt-get install python-pip``
+* ``sudo pip install flask``
 
-## Run Ambilight Application
-* TBD
 
-## Resources
+## Run Ambilight Server Application
+* Manual Launch
+  * copy ``AmbiLightServer.py`` to ``/home/pi/`` on your Raspberry Pi (on Windows
+    with e.g. [WinSCP](https://winscp.net/eng/docs/lang:de))
+  * ``sudo python AmbiLightServer.py`` to launch application
+  * The server listens on **Port 5000** per default
+
+# REST API
+
+## /ambilight/color
+This resource can be used to set the color of all LEDs simultaneously
+* method: POST
+* contentType: application/json
+* data format:
+```
+{
+    "r": <0-255>,
+    "g": <0-255>,
+    "b": <0-255>
+}
+```
+
+## /ambilight/brightness
+This resource can be used to set the brightness of all LEDs simultaneously
+* method: POST
+* contentType: application/json
+* data format:
+```
+{
+    "brightness": <0-255>
+}
+```
+
+# Moar
 * [WS2812 RGB LED Streifen per Raspberry Pi steuern](https://tutorials-raspberrypi.de/raspberry-pi-ws2812-ws2811b-rgb-led-streifen-steuern/)
 * [Raspberry Pi 3 GPIO Header](https://www.element14.com/community/servlet/JiveServlet/previewBody/73950-102-11-339300/pi3_gpio.png)
 * [jgarff's ws281x library](https://github.com/jgarff/rpi_ws281x)
@@ -63,3 +98,4 @@ network={
 * [Ubuntu 16.04 image](https://www.ubuntu.com/download/desktop/thank-you?country=CH&version=16.04.3&architecture=amd64)
 * [Update Raspberry Pi](https://www.raspberrypi.org/documentation/raspbian/updating.md)
 * [change passwd](https://www.raspberrypi.org/documentation/linux/usage/users.md)
+* [Designing RESTful API with Python and Flask](https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask)
