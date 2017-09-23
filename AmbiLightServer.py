@@ -16,7 +16,14 @@ LED_CHANNEL    = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
 LED_STRIP      = ws.WS2811_STRIP_GRB   # Strip type and colour ordering
 
 app = Flask(__name__)
-strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL, LED_STRIP)
+strip = Adafruit_NeoPixel(LED_COUNT,
+                            LED_PIN,
+                            LED_FREQ_HZ,
+                            LED_DMA,
+                            LED_INVERT,
+                            LED_BRIGHTNESS,
+                            LED_CHANNEL,
+                            LED_STRIP)
 
 def setPixelColor(color):
     for i in range(0, LED_COUNT):
@@ -43,4 +50,3 @@ def set_brightness():
 if __name__ == '__main__':
     strip.begin()
     app.run(debug=True, host='0.0.0.0')
-    setPixelColor(Color(0,0,0))
