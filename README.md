@@ -44,7 +44,7 @@ network={
 * ``nano ~/.bashrc`` in pi home directory
 * add ``export PYTHONPATH="${PYTHONPATH}:/home/pi/rpi_ws281x/python/build/lib.linux-armv7l-2.7"`` at the end
 * ``source ~/.bashrc``
-* driver needs access to /dev/mem, thats why scripts with LEDs must called with sudo
+* driver needs access to /dev/mem, thats why scripts with LEDs must be called with sudo
   * ``sudo nano /etc/sudoers``
   * add ``Defaults env_keep += "PYTHONPATH"`` in the end
 * now ``import neopixel`` within python scripts should work
@@ -99,3 +99,5 @@ This resource can be used to set the brightness of all LEDs simultaneously
 * [Update Raspberry Pi](https://www.raspberrypi.org/documentation/raspbian/updating.md)
 * [change passwd](https://www.raspberrypi.org/documentation/linux/usage/users.md)
 * [Designing RESTful API with Python and Flask](https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask)
+* [ScreenBloom](http://www.screenbloom.com/)
+* [Autonomous Light Controller](http://klautesblog.blogspot.ch/2013/03/autonomous-light-controller.html)
