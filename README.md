@@ -1,5 +1,14 @@
-# Ambilight Server on Raspberry Pi 3
-## Basic Setup
+# AmbiLight with Raspberry Pi 3, WS2812 LEDs and Python
+AmbiLight consists of a Server and a Client application.
+At the moment it is possible to set static colors with a Client Python application
+Ideas to implement in the future
+* find a performant way to grab "average" screen color and update light in realtime
+* system tray app for windows
+* bind music to some kind of color effect
+* implement some effects (server based) select with client app
+* investigate performance gain of UDP data transmission instead of http requests
+
+## Basic Setup Rasperry Pi
 * flash [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) to Raspberry Pi's SD card, on windows use [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/)
   * used version: 2017-09-07-raspbian-stretch-lite
 * Connect SD card to computer and open boot partition (works also on windows)
@@ -87,6 +96,11 @@ This resource can be used to set the brightness of all LEDs simultaneously
     "brightness": <0-255>
 }
 ```
+
+# Run the Python AmbiLightClient
+* on your client computer python ``requests`` library must be installed
+* ``pip install requests``
+* ``python AmbiLightClient.py`` to run
 
 # Moar
 * [WS2812 RGB LED Streifen per Raspberry Pi steuern](https://tutorials-raspberrypi.de/raspberry-pi-ws2812-ws2811b-rgb-led-streifen-steuern/)

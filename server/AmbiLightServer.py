@@ -37,6 +37,7 @@ def index():
 @app.route('/ambilight/color', methods=['POST'])
 def set_color():
     data = request.json
+    print(str(data))
     setPixelColor(Color(data['r'], data['g'], data['b']))
     return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
 
