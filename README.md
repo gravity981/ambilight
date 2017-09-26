@@ -27,6 +27,7 @@ network={
     key_mgmt=WPA-PSK
 }
 ```
+
 * plugin SD card to Raspberry Pi and power up
 * connect via ssh
   * default hostname is ``raspberrypi``
@@ -58,11 +59,9 @@ network={
   * add ``Defaults env_keep += "PYTHONPATH"`` in the end
 * now ``import neopixel`` within python scripts should work
 
-
 ## Install Flask Python Web Framework
 * ``sudo apt-get install python-pip``
 * ``sudo pip install flask``
-
 
 ## Run Ambilight Server Application
 * Manual Launch
@@ -70,6 +69,7 @@ network={
     with e.g. [WinSCP](https://winscp.net/eng/docs/lang:de))
   * ``sudo python AmbiLightServer.py`` to launch application
   * The server listens on **Port 5000** per default
+
 
 # REST API
 
@@ -97,10 +97,12 @@ This resource can be used to set the brightness of all LEDs simultaneously
 }
 ```
 
+
 # Run the Python AmbiLightClient
 * on your client computer python ``requests`` library must be installed
 * ``pip install requests``
 * ``python AmbiLightClient.py`` to run
+
 
 # Moar
 * [WS2812 RGB LED Streifen per Raspberry Pi steuern](https://tutorials-raspberrypi.de/raspberry-pi-ws2812-ws2811b-rgb-led-streifen-steuern/)
