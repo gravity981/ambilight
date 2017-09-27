@@ -117,3 +117,7 @@ This resource can be used to set the brightness of all LEDs simultaneously
 * [Designing RESTful API with Python and Flask](https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask)
 * [ScreenBloom](http://www.screenbloom.com/)
 * [Autonomous Light Controller](http://klautesblog.blogspot.ch/2013/03/autonomous-light-controller.html)
+* [AmbiLight with Hyperion](http://www.forum-raspberrypi.de/Thread-hyperion-ambilight-projekt-fuer-hdmi-quellen-raspberrypi-raspbian-hyperion-tv-beamer)
+* [HDMI to Composite Signal Splitter](https://www.amazon.de/Splitter-Konverter-Analog-Composite-Stereo/dp/B01FREES9C/ref=sr_1_fkmr0_1?s=ce-de&ie=UTF8&qid=1489924539&sr=1-1-fkmr0&keywords=HDMItocvbs+auto+scaler&tag=httpwwwforumr-21)
+* [Audio / Video Grabber](http://www.insaneware.de/epages/61714203.sf/de_DE/?ObjectPath=/Shops/61714203/Products/usbgrab)
+* [Hyperion Project](https://github.com/hyperion-project/hyperion)
